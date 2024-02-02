@@ -1,0 +1,219 @@
+import "./Stories.css"
+
+import { uploads } from "../../utils/config"
+import { BsHeart, BsHeartFill } from "react-icons/bs"
+
+
+//Hooks
+import { useDispatch, useSelector } from "react-redux"
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+
+
+//Redux
+import { getUserDetails } from "../../slices/userSlice"
+
+
+
+const Stories = () => {
+
+  const {id} = useParams();
+
+  const dispatch = useDispatch();
+
+  const {user, stories, loading} = useSelector((state) => state.user);
+
+  const [like, setLike] = useState(false);
+
+
+
+
+  useEffect(() => {
+
+    dispatch(getUserDetails(id));
+
+  }, [dispatch, id]);
+
+
+  const handleLike = () => {
+
+  }
+
+
+
+
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+    const showSlide = (index) => {
+        const carousel = document.querySelector('.carrocel');
+        const totalSlides = document.querySelectorAll('.stories-image').length;
+        const minIndex = 0;
+        const maxIndex = totalSlides - 1;
+
+        if (index >= minIndex && index <= maxIndex) {
+            setCurrentIndex(index);
+            const translateValue = -index * 60; // Adjust 60 as per your image width
+
+            carousel.style.transform = `translateX(${translateValue}px)`;
+        }
+    };
+
+    const prevSlide = () => {
+        showSlide(currentIndex - 1);
+    };
+
+    const nextSlide = () => {
+        showSlide(currentIndex + 1);
+    };
+
+  
+
+  return (
+    <div className="container-stories-item">
+      <div className="carrocel">
+      {user && (
+          <>
+            <div className="user-descripton">
+              <img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />
+              <div className="user-description-name">
+                <span>{user.name}</span>
+                <span id="time">1h</span>
+              </div>
+            </div>
+
+            <div className="stories-image">
+              {stories && (stories.map((storie) => (
+                storie && (<img key={storie} src={`${uploads}/users/${storie}`} alt={user.name} />)
+              )))}
+            </div>
+
+            <div className="like-svg">
+              {like ? (
+                <BsHeartFill />
+              ):(
+                <BsHeart onClick={() => handleLike()} />
+              )}  
+            </div>
+          </>
+        )}
+        
+      </div>
+      <button className="prev-btn" onClick={prevSlide}>‹</button>
+        <button className="next-btn" onClick={nextSlide}>›</button>
+    </div>
+  )
+}
+
+export default Stories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-stories-item {
+  overflow: hidden;
+  position: relative;
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #262626;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(128, 128, 128));
+  border-radius: 5%;
+}
+
+.carrocel{
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+
+.user-descripton {
+  display: flex;
+  height: 40px;
+  margin-top: 4px;
+  
+}
+
+.stories-image {
+  flex: 0 0 auto;
+  text-align: center;
+  margin-right: 10px;
+}
+  
+
+.like-svg {
+  width: 100%;
+  border-radius: 5%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  height: 100px;
+  
+}
+
+
+
+.stories-image img {
+  width: 600px;
+  border-radius: 5% 5% 5% 5%;
+}
+
+.like-svg svg {
+ position: absolute;
+ font-size: 25px;
+ right: 5px;
+ bottom: 5px;
+ font-weight: bold;
+ 
+}
+
+
+
+.user-description-name{
+  font-size: 14px;
+  margin-left: 5px;
+  padding-top: 10px;
+}
+
+#time {
+  font-size: 13px;
+  margin-left: 5px;
+  
+}
+
+.user-descripton img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}

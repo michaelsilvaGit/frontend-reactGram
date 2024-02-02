@@ -1,0 +1,65 @@
+.container-stories {
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+
+.stories {
+    margin-top: 20px;
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+
+}
+
+.stories-item{
+    flex: 0 0 auto;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.profile-image-stories{
+    border: 2px solid;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-decoration: none;
+    border-inline-end-color: rgb(255, 36, 36);
+    border-block-end-color: rgb(255, 58, 157);
+    border-block-start-color: rgb(255, 240, 24);
+    border-inline-start-color: rgb(255, 139, 31);
+    cursor: pointer;
+    
+}
+
+
+
+#names-stories {
+    font-size: 11px;
+}
+
+
+.prev-btn,
+.next-btn {
+    background: transparent;
+    color: #0094f6;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    border: none;
+    cursor: pointer;
+    padding: 0px 10px 5px 10px;
+    border-radius: 40%;
+}
+
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}

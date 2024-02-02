@@ -1,0 +1,78 @@
+.container-stories-item {
+    position: relative;
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #262626;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(128, 128, 128));
+    border-radius: 5%;
+    margin-bottom: 30px;
+}
+
+.user-descripton {
+    margin-left: 10px;
+    display: flex;
+    height: 40px;
+    margin-top: 4px;
+    
+}
+
+
+.like-svg {
+    width: 100%;
+    border-radius: 5%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    height: 130px;
+    
+}
+
+
+.container-stories-item img {
+    width: 100%;
+    border-radius: 5% 5% 5% 5%;
+}
+
+.like-svg svg {
+   position: absolute;
+   font-size: 25px;
+   right: 25px;
+   bottom: 10px;
+   font-weight: bold;
+   cursor: pointer;
+
+   
+   
+}
+
+
+
+#numberLike {
+   right: 10px;
+   bottom: 10px;
+   position: absolute;
+   font-size: 14px;
+}
+
+
+
+.user-description-name{
+    font-size: 14px;
+    margin-left: 5px;
+    padding-top: 10px;
+}
+
+#time {
+    font-size: 13px;
+    margin-left: 5px;
+    color: #868686;
+    
+}
+
+.user-descripton img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
