@@ -19,3 +19,5 @@ Este projeto é um aprendizado de um curso completo de frontend reactJS e Backen
 - **React-router**: Navegação entre paginas utilizando react router.
 - **Redux**: Biblioteca de gerenciamento de estados e compartilhamento de dados entre os arquivos.
 - **Hooks**: Funções nativa do proprio ReactJS e funções criadas para suprir algumas necessidades.
+- **Fetch API**: ultilizado para a comunicação com o backend.
+
