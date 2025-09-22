@@ -1,8 +1,21 @@
-# React + Vite
+# Projeto ReactGram
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um aprendizado de um curso completo de frontend reactJS e Backend NodeJs. Ele consiste em imitar as principais funcionalidade do Instagram. 
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Feed**: Uma pagina onde mostra todas as publicações dos usários cadastrados na aplicação.
+- **Story**: Um carrossel de status na parte superior onde mostra os storys postados.
+- **Autenticação**: Login, logout de usuarios na aplicação.
+- **Adicionar posts**: Fazer publicações com a função de envio de fotos e legendas.
+- **Perfil**: Visualizações das informações de perfil do usuário e edição do mesmo.
+- **Busca se post**: Pesquisa de publicações que foram envidas no feed.
+- **Comentario, curtida**: Possibilidade de comentar e curtir uma publicação enviada no feed.
+
+## Tecnologias Utilizadas
+
+- **ReactJS**: Framework base da aplicação na liguaguem ReactJS.
+- **CSS**: Estilizando a interface usando css.
+- **React-router**: Navegação entre paginas utilizando react router.
+- **Redux**: Biblioteca de gerenciamento de estados e compartilhamento de dados entre os arquivos.
+- **Hooks**: Funções nativa do proprio ReactJS e funções criadas para suprir algumas necessidades.
